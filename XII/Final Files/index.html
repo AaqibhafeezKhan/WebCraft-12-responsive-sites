@@ -3,55 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noir Studio | Minimalist Architecture</title>
+    <title>NOIR | Silence & Space</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Neue+Montreal:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="line-background"></div>
+    <div class="noise-overlay"></div>
+    <div class="cursor-dot"></div>
     
-    <nav>
-        <div class="logo">NOIR.</div>
-        <div class="menu-btn">INDEX</div>
+    <nav class="nav-bar">
+        <div class="flex-spread">
+            <span class="logo">NOIR</span>
+            <div class="menu-toggle">
+                <span>[ INDEX ]</span>
+            </div>
+        </div>
     </nav>
 
-    <main>
-        <section class="hero">
-            <div class="hero-text">
-                <h1>SHAPING <br>SILENCE</h1>
-                <p>Architectural studio focused on brutalist minimalism and the emotional impact of space.</p>
+    <main data-scroll-container>
+        <section class="hero scene">
+            <div class="hero-left">
+                <div class="header-wrap">
+                    <h1 class="reveal-text">SHAPING</h1>
+                </div>
+                <div class="header-wrap">
+                    <h1 class="reveal-text"><span class="italic">the</span> VOID</h1>
+                </div>
+                <p class="hero-desc reveal-fade">We explore the emotional resonance of raw materials. Brutalist architecture as an act of subtraction rather than addition.</p>
+                <div class="hero-meta reveal-fade">
+                    <span>EST 2026</span>
+                    <span>LONDON / TOKYO</span>
+                </div>
             </div>
-            <div class="hero-image-container">
-                <img src="../../noir_editorial_architecture_1776791692047.png" alt="Brutalist Architecture">
-                <div class="image-label">01 / PROJECT NOIR</div>
+            <div class="hero-right">
+                <div class="image-wrapper mask-reveal">
+                    <!-- Updated to use the local images folder -->
+                    <img src="images/hero.png" alt="Monochrome architecture" data-scroll data-scroll-speed="-0.1">
+                </div>
+                <div class="img-caption reveal-fade">PROJECT 01: MONOLITH</div>
             </div>
         </section>
 
-        <section class="gallery">
-            <div class="gallery-item large">
-                <div class="item-text">
-                    <h2>STRUCTURE</h2>
-                    <p>The dialogue between concrete and light.</p>
-                </div>
+        <section class="manifesto scene">
+            <div class="manifesto-content">
+                <div class="huge-text-v">MANIFESTO</div>
+                <h2 class="reveal-text">Concrete is our canvas. Light is our medium. Shadow is our form.</h2>
+                <a href="#" class="btn-minimal reveal-fade">DISCOVER PROJECTS &rarr;</a>
             </div>
-            <div class="gallery-item small">
-                <div class="item-text">
-                    <h2>VOID</h2>
-                    <p>Understanding the space we don't build.</p>
-                </div>
+        </section>
+        
+        <section class="grid-section scene">
+            <div class="grid-item">
+                <div class="number">01</div>
+                <h3>Form</h3>
+                <p>Structure stripped of ornament. Function laid bare.</p>
+            </div>
+            <div class="grid-item dark">
+                <div class="number">02</div>
+                <h3>Mass</h3>
+                <p>Weight anchored in space, demanding presence.</p>
+            </div>
+            <div class="grid-item">
+                <div class="number">03</div>
+                <h3>Light</h3>
+                <p>The sculptor that carves emotion into stone and geometry.</p>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-links">
-            <a href="#">Instagram</a>
-            <a href="#">Contact</a>
-            <a href="#">Privacy</a>
+    <footer class="footer">
+        <div class="flex-spread">
+            <div>
+                <a href="#" class="footer-link">INSTAGRAM</a>
+                <a href="#" class="footer-link">BEHANCE</a>
+            </div>
+            <div class="footer-logo">NOIR. ARCHITECTURE</div>
+            <div>&copy; 2026</div>
         </div>
-        <p class="copyright">EST 2026</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
