@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archaus — Architecture & Interior Design</title>
+  <meta name="description" content="Award-winning architectural and interior design studio. We craft spaces that inspire.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <button class="hamburger-menu" id="hamburger-btn" aria-label="Open menu">
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+  </button>
+
+  <div class="overlay-nav" id="overlay-nav">
+    <button class="overlay-close" id="overlay-close">Close</button>
+    <div class="overlay-nav-links">
+      <a href="#" id="nav-home">Home</a>
+      <a href="#about" id="nav-about">About Us</a>
+      <a href="#team" id="nav-team">Team</a>
+      <a href="#contact" id="nav-contact">Contact</a>
+    </div>
+    <div class="overlay-social">
+      <a href="#" id="social-fb"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" id="social-ig"><i class="fab fa-instagram"></i></a>
+      <a href="#" id="social-tw"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+
+  <header class="arch-header">
+    <div class="header-img-panel">
+      <img src="images/bg.jpg" alt="Architecture">
+    </div>
+    <div class="header-content-panel">
+      <p class="arch-tagline">Architecture &amp; Interior Design</p>
+      <h1 class="arch-title">Building visions,<br>crafting spaces</h1>
+      <p class="arch-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Crafting environments where art meets function.</p>
+      <button class="arch-cta" id="hero-discover-btn">Discover Now</button>
+    </div>
+  </header>
+
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="section-header">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">About Us</h2>
+        <div class="divider-line"></div>
+      </div>
+      <div class="services-grid">
+        <div class="service-item" id="service-interior">
+          <div class="service-icon"><i class="fas fa-pen-nib"></i><h3>Interior</h3></div>
+          <p class="service-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, officia! Necessitatibus delectus sed dicta corrupti voluptatibus, omnis eius vel ab magni nemo.</p>
+        </div>
+        <div class="service-item" id="service-exterior">
+          <div class="service-icon"><i class="fas fa-paint-roller"></i><h3>Exterior</h3></div>
+          <p class="service-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, officia! Necessitatibus delectus sed dicta corrupti voluptatibus, omnis eius vel ab magni nemo.</p>
+        </div>
+        <div class="service-item" id="service-design">
+          <div class="service-icon"><i class="fas fa-pencil-alt"></i><h3>Design</h3></div>
+          <p class="service-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, officia! Necessitatibus delectus sed dicta corrupti voluptatibus, omnis eius vel ab magni nemo.</p>
+        </div>
+        <div class="service-item" id="service-decor">
+          <div class="service-icon"><i class="fas fa-paint-brush"></i><h3>Decoration</h3></div>
+          <p class="service-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, officia! Necessitatibus delectus sed dicta corrupti voluptatibus, omnis eius vel ab magni nemo.</p>
+        </div>
+        <div class="service-item" id="service-planning">
+          <div class="service-icon"><i class="fas fa-ruler-combined"></i><h3>Planning</h3></div>
+          <p class="service-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, officia! Necessitatibus delectus sed dicta corrupti voluptatibus, omnis eius vel ab magni nemo.</p>
+        </div>
+        <div class="service-item" id="service-execution">
+          <div class="service-icon"><i class="far fa-building"></i><h3>Execution</h3></div>
+          <p class="service-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, officia! Necessitatibus delectus sed dicta corrupti voluptatibus, omnis eius vel ab magni nemo.</p>
+        </div>
+        <div class="house-image">
+          <img src="images/house.png" alt="House">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section" id="team">
+    <div class="team-inner">
+      <div class="section-header">
+        <p class="section-label">Meet the Talent</p>
+        <h2 class="section-title">Our Team</h2>
+        <div class="divider-line"></div>
+      </div>
+      <div class="team-grid" id="team-grid">
+        <div class="team-card tilt-wrapper" id="team-john" data-tilt>
+          <div class="card-img-wrap"><img src="images/person-1.jpg" alt="John Smith"></div>
+          <div class="card-body">
+            <h2 class="member-name">John Smith</h2>
+            <p class="member-role">CEO</p>
+            <p class="member-quote">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, impedit!"</p>
+            <button class="card-read-more" id="read-more-john">Read More</button>
+          </div>
+        </div>
+        <div class="team-card tilt-wrapper" id="team-ann" data-tilt>
+          <div class="card-img-wrap"><img src="images/person-2.jpg" alt="Ann Brown"></div>
+          <div class="card-body">
+            <h2 class="member-name">Ann Brown</h2>
+            <p class="member-role">Designer</p>
+            <p class="member-quote">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, impedit!"</p>
+            <button class="card-read-more" id="read-more-ann">Read More</button>
+          </div>
+        </div>
+        <div class="team-card tilt-wrapper" id="team-mary" data-tilt>
+          <div class="card-img-wrap"><img src="images/person-3.jpg" alt="Mary Doe"></div>
+          <div class="card-body">
+            <h2 class="member-name">Mary Doe</h2>
+            <p class="member-role">Architect</p>
+            <p class="member-quote">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, impedit!"</p>
+            <button class="card-read-more" id="read-more-mary">Read More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="contact-bg-strip"></div>
+    <div class="contact-inner">
+      <div class="contact-panel dark">
+        <p class="contact-label">Let's Talk</p>
+        <h2 class="contact-title">Contact</h2>
+      </div>
+      <div class="contact-panel">
+        <form class="contact-floating-form" id="contact-form">
+          <div class="float-group">
+            <input type="text" class="float-input" id="contact-name" placeholder=" ">
+            <label class="float-label" for="contact-name">Full Name</label>
+          </div>
+          <div class="float-group">
+            <input type="email" class="float-input" id="contact-email" placeholder=" ">
+            <label class="float-label" for="contact-email">Email</label>
+          </div>
+          <div class="float-group">
+            <textarea class="float-input float-textarea" id="contact-message" placeholder=" "></textarea>
+            <label class="float-label label-textarea" for="contact-message">Message</label>
+          </div>
+          <input type="submit" class="arch-submit" id="contact-submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="arch-footer">
+    <p class="footer-copy">Copyright &copy; 2024 Archaus &mdash; All Rights Reserved</p>
+    <div class="footer-social">
+      <a href="#" id="footer-fb"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" id="footer-ig"><i class="fab fa-instagram"></i></a>
+      <a href="#" id="footer-tw"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <a href="#" class="back-top" id="back-top-btn" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="tilt.js"></script>
+</body>
+</html>
