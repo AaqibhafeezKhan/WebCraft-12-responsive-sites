@@ -1,6 +1,6 @@
-# 12 Responsive Sites
+# WebCraft 12 Responsive Sites
 
-A collection of twelve premium, fully responsive websites — each with a unique aesthetic theme, built with pure HTML, CSS, and JavaScript. No frameworks. No UI libraries. Just clean, semantic, hand-crafted code.
+A collection of twelve premium, fully responsive websites - each with a unique aesthetic theme, built with pure HTML, CSS, and JavaScript. No frameworks. No UI libraries. Just clean, semantic, hand-crafted code.
 
 ## Projects
 
