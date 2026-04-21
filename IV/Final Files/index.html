@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classic Cars — Timeless Luxury Automobiles</title>
+  <meta name="description" content="Discover the world's finest classic cars. Browse our curated gallery of vintage luxury automobiles.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="loading-bars"><div></div><div></div></div>
+
+  <nav class="nav-classic" id="main-nav">
+    <a href="#home" id="nav-home">Home</a>
+    <a href="#popular-cars" id="nav-cars">Popular Cars</a>
+    <a href="#video-gallery" id="nav-videos">Video Gallery</a>
+    <a href="#image-gallery" id="nav-gallery">Image Gallery</a>
+    <a href="#contact" id="nav-contact">Contact</a>
+  </nav>
+  <div class="nav-spacer"></div>
+
+  <section class="hero-section" id="home">
+    <div class="hero-gradient"></div>
+    <div class="hero-inner">
+      <h1 class="brand-title">Classic<br>Cars</h1>
+      <div class="hero-divider">
+        <div class="hero-divider-line"></div>
+        <div class="hero-divider-diamond"></div>
+        <div class="hero-divider-line"></div>
+      </div>
+      <img src="images/car-section1.png" alt="Classic Car" class="hero-car">
+    </div>
+  </section>
+
+  <section class="cars-section" id="popular-cars">
+    <div class="cars-inner">
+      <p class="section-eyebrow">Curated Collection</p>
+      <h1 class="section-title">Popular Cars</h1>
+      <div class="cars-grid">
+        <div class="car-card" id="car-card-1">
+          <img src="images/car-1.jpg" alt="Car 1" class="car-img">
+          <div class="car-info">
+            <h2 class="car-name">Car Name</h2>
+            <h3 class="car-price">$ 200,000</h3>
+            <button class="car-btn" id="car-btn-1">See More</button>
+          </div>
+        </div>
+        <div class="car-card" id="car-card-2">
+          <img src="images/car-2.jpg" alt="Car 2" class="car-img">
+          <div class="car-info">
+            <h2 class="car-name">Car Name</h2>
+            <h3 class="car-price">$ 100,000</h3>
+            <button class="car-btn" id="car-btn-2">See More</button>
+          </div>
+        </div>
+        <div class="car-card" id="car-card-3">
+          <img src="images/car-3.jpg" alt="Car 3" class="car-img">
+          <div class="car-info">
+            <h2 class="car-name">Car Name</h2>
+            <h3 class="car-price">$ 150,000</h3>
+            <button class="car-btn" id="car-btn-3">See More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section" id="video-gallery">
+    <div class="video-inner">
+      <p class="section-eyebrow">In Motion</p>
+      <h1 class="section-title">Video Gallery</h1>
+      <div class="video-grid">
+        <video src="images/car-video-1.mp4" muted loop class="car-video" id="video-1"></video>
+        <video src="images/car-video-2.mp4" muted loop class="car-video" id="video-2"></video>
+        <video src="images/car-video-3.mp4" muted loop class="car-video" id="video-3"></video>
+      </div>
+      <div class="video-grid">
+        <video src="images/car-video-4.mp4" muted loop class="car-video" id="video-4"></video>
+        <video src="images/car-video-5.mp4" muted loop class="car-video" id="video-5"></video>
+        <video src="images/car-video-6.mp4" muted loop class="car-video" id="video-6"></video>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section" id="image-gallery">
+    <div class="gallery-inner">
+      <p class="section-eyebrow">Visual Heritage</p>
+      <h1 class="section-title">Image Gallery</h1>
+      <div class="gallery-row">
+        <div class="gallery-slot"><div class="color-block"></div></div>
+        <div class="gallery-slot"><img src="images/gallery-car-1.jpg" alt="Gallery Car 1"></div>
+        <div class="gallery-slot"><img src="images/gallery-car-2.jpg" alt="Gallery Car 2"></div>
+      </div>
+      <div class="gallery-row">
+        <div class="gallery-slot"><img src="images/gallery-car-3.jpg" alt="Gallery Car 3"></div>
+        <div class="gallery-slot"><img src="images/gallery-car-4.jpg" alt="Gallery Car 4"></div>
+        <div class="gallery-slot"><img src="images/gallery-car-5.jpg" alt="Gallery Car 5"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <p class="section-eyebrow">Get In Touch</p>
+      <h1 class="section-title">Contact Us</h1>
+      <form class="gold-form" id="contact-form">
+        <input type="text" class="gold-input" id="contact-name" placeholder="Your Full Name">
+        <input type="email" class="gold-input" id="contact-email" placeholder="Your Email">
+        <textarea class="gold-input gold-textarea" id="contact-message" placeholder="Enter Message"></textarea>
+        <input class="gold-submit" type="submit" id="contact-submit" value="Submit">
+      </form>
+      <p class="footer-copy">Copyright &copy; WebCraft All Rights Reserved</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
