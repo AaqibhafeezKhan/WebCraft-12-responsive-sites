@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" shape-rendering="crispEdges">
-  <rect x="4" y="18" width="16" height="6" fill="#15803d"/>
-  <rect x="6" y="16" width="12" height="2" fill="#15803d"/>
-  <rect x="10" y="14" width="4" height="2" fill="#f0fdf4"/>
-  <rect x="7" y="6" width="10" height="9" fill="#f0fdf4"/>
-  <rect x="7" y="4" width="10" height="3" fill="#22c55e"/>
-  <rect x="9" y="9" width="2" height="2" fill="#052e16"/>
-  <rect x="13" y="9" width="2" height="2" fill="#052e16"/>
-  <rect x="11" y="8" width="2" height="8" fill="#4ade80" opacity="0.2"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" shape-rendering="crispEdges"><metadata xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/"><rdf:RDF><rdf:Description><dc:title>Pixel Art</dc:title><dc:creator>DiceBear</dc:creator><dc:source xsi:type="dcterms:URI">https://www.figma.com/community/file/1198754108850888330</dc:source><dcterms:license xsi:type="dcterms:URI">https://creativecommons.org/publicdomain/zero/1.0/</dcterms:license><dc:rights>„Pixel Art” (https://www.figma.com/community/file/1198754108850888330) by „DiceBear”, licensed under „CC0 1.0” (https://creativecommons.org/publicdomain/zero/1.0/)</dc:rights></rdf:Description></rdf:RDF></metadata><mask id="viewboxMask"><rect width="16" height="16" rx="0" ry="0" x="0" y="0" fill="#fff" /></mask><g mask="url(#viewboxMask)"><path d="M4 2h8v1h1v3h1v2h-1v3h-1v1H9v1h4v1h1v2H2v-2h1v-1h4v-1H4v-1H3V8H2V6h1V3h1V2Z" fill="#ffdbac"/><path d="M4 2h8v1h1v3h1v2h-1v3h-1v1H4v-1H3V8H2V6h1V3h1V2Z" fill="#fff" fill-opacity=".1"/><path d="M10 13h3v1h1v2H2v-2h1v-1h3v1h1v1h2v-1h1v-1Z" fill="#44c585"/><path fill="#fff" d="M4 5h3v3H4zM9 5h3v3H9z"/><path fill="#76778b" d="M4 6h2v1H4zM9 6h2v1H9z"/><path fill="#fff" fill-opacity=".7" d="M4 6h1v1H4zM9 6h1v1H9z"/><path d="M9 9v1H7v1H6v-1h1V9h2Z" fill="#d29985"/><path d="M5 1H3v1H2v2h1v1h1V4h8v1h1V4h1V2h-1V1h-2v1H5V1Z" fill="#603a14"/></g></svg>
