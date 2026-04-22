@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" shape-rendering="crispEdges">
+  <!-- Body/Shirt -->
+  <rect x="4" y="18" width="16" height="6" fill="#064e3b"/>
+  <rect x="6" y="16" width="12" height="2" fill="#064e3b"/>
+  <!-- Neck -->
+  <rect x="10" y="14" width="4" height="2" fill="#e0ac69"/>
+  <!-- Face -->
+  <rect x="7" y="6" width="10" height="9" fill="#e0ac69"/>
+  <!-- Hair -->
+  <rect x="7" y="3" width="10" height="4" fill="#22c55e"/>
+  <rect x="6" y="4" width="2" height="2" fill="#22c55e"/>
+  <rect x="16" y="4" width="2" height="2" fill="#22c55e"/>
+  <!-- Eyes -->
+  <rect x="9" y="9" width="2" height="2" fill="#022c22"/>
+  <rect x="13" y="9" width="2" height="2" fill="#022c22"/>
+  <!-- AI Glitch/Cyber -->
+  <rect x="11" y="0" width="2" height="18" fill="#4ade80" opacity="0.1"/>
+  <rect x="2" y="12" width="20" height="1" fill="#4ade80" opacity="0.1"/>
+</svg>

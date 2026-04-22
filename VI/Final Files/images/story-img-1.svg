@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" shape-rendering="crispEdges">
+  <!-- Traveler 1 - Coastal vibe -->
+  <rect x="4" y="18" width="16" height="6" fill="#0891b2"/>
+  <rect x="6" y="16" width="12" height="2" fill="#0891b2"/>
+  <rect x="10" y="14" width="4" height="2" fill="#fef3c7"/>
+  <rect x="7" y="6" width="10" height="9" fill="#fef3c7"/>
+  <rect x="7" y="4" width="10" height="3" fill="#06b6d4"/>
+  <rect x="9" y="9" width="2" height="2" fill="#164e63"/>
+  <rect x="13" y="9" width="2" height="2" fill="#164e63"/>
+  <rect x="0" y="15" width="24" height="1" fill="#22d3ee" opacity="0.3"/>
+</svg>
