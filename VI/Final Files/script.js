@@ -1,23 +1,35 @@
-const wrap-container = document.querySelector(".c_0elwl7");
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('nav-hamburger');
+    const drawer = document.getElementById('nav-drawer');
+    const drawerLinks = document.querySelectorAll('.nav-drawer-links a');
 
-document.querySelector(".c_iw6qkr").addEventListener("click", () => {
-  wrap-container.classList.add("c_ifyq4u");
-});
+    if (hamburger && drawer) {
+        hamburger.addEventListener('click', () => {
+            drawer.classList.toggle('active');
+            hamburger.classList.toggle('change');
+        });
+    }
 
-document.querySelector(".c_m6qd8a").addEventListener("click", () => {
-  wrap-container.classList.remove("c_ifyq4u");
-});
+    drawerLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            drawer.classList.remove('active');
+            hamburger.classList.remove('change');
+        });
+    });
 
-const colors = ["#6495ed", "#7fffd4", "#ffa07a", "#f08080", "#afeeee"];
+    // Tour card flipping
+    const revealBtns = document.querySelectorAll('.price-reveal-btn');
+    const backBtns = document.querySelectorAll('.back-btn');
 
-let i = 0;
+    revealBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.closest('.tour-card').classList.add('flipped');
+        });
+    });
 
-Array.from(document.querySelectorAll(".c_pthfon")).forEach(item => {
-  item.style.cssText = `background-color: ${colors[i++]}`;
-});
-
-Array.from(document.querySelectorAll(".c_p0ltpp")).forEach(item => {
-  item.onclick = () => {
-    item.parentElement.parentElement.classList.toggle("c_ifyq4u");
-  };
+    backBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.closest('.tour-card').classList.remove('flipped');
+        });
+    });
 });

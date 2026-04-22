@@ -1,41 +1,37 @@
-const nav-top = document.querySelector(".c_4d7r7a");
-const nav-topOffsetTop = nav-top.offsetTop;
-const sections = document.querySelectorAll("section");
-const nav-topLinks = document.querySelectorAll(".c_uptqgs");
-const progress = document.querySelector(".c_gm3iru");
-const progressBarPercents = [97, 89, 85, 87, 80, 70, 50];
+document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.querySelector(".cyber-nav");
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".cyber-nav a");
+    const skillFills = document.querySelectorAll(".skill-fill");
 
-window.addEventListener("scroll", () => {
-  mainFn();
-});
+    const handleScroll = () => {
+        const scrollPos = window.pageYOffset;
 
-const mainFn = () => {
-  if (window.pageYOffset >= nav-topOffsetTop) {
-    nav-top.classList.add("c_qcw28l");
-  } else {
-    nav-top.classList.remove("c_qcw28l");
-  }
+        // Sticky Nav logic
+        if (scrollPos > 100) {
+            nav.classList.add("nav-active");
+        } else {
+            nav.classList.remove("nav-active");
+        }
 
-  sections.forEach((section, i) => {
-    if (window.pageYOffset >= section.offsetTop - 10) {
-      nav-topLinks.forEach((nav-topLink) => {
-        nav-topLink.classList.remove("c_q2frj7");
-      });
-      nav-topLinks[i].classList.add("c_q2frj7");
-    }
-  });
+        // Active link highlighting
+        sections.forEach((section, i) => {
+            if (scrollPos >= section.offsetTop - 150) {
+                navLinks.forEach((link) => link.classList.remove("active"));
+                if (navLinks[i]) navLinks[i].classList.add("active");
+            }
+        });
 
-  if (window.pageYOffset + window.innerHeight >= progress.offsetTop) {
-    document.querySelectorAll(".c_oiook8").forEach((el, i) => {
-      el.style.width = `${progressBarPercents[i]}%`;
-      el.previousElementSibling.firstElementChild.textContent =
-        progressBarPercents[i];
-    });
-  }
-};
+        // Skill bar animation trigger
+        const aboutSection = document.querySelector(".about-section");
+        if (aboutSection && scrollPos + window.innerHeight >= aboutSection.offsetTop + 200) {
+            skillFills.forEach(fill => {
+                const width = fill.style.width;
+                fill.classList.add("animated");
+            });
+        }
+    };
 
-mainFn();
-
-window.addEventListener("resize", () => {
-  window.location.reload();
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
 });

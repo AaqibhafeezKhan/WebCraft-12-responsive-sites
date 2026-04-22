@@ -1,73 +1,71 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('nav-hamburger');
+    const megaLinks = document.getElementById('nav-mega-links');
+    const loginBtn = document.getElementById('nav-login-btn');
+    const signupBtn = document.getElementById('nav-signup-btn');
+    const authPanel = document.getElementById('auth-panel');
+    const loginForm = document.getElementById('login-form-wrap');
+    const signupPanel = document.getElementById('signup-panel');
+    const backToLogin = document.getElementById('back-to-login-btn');
+    const switchToSignup = document.getElementById('switch-to-signup-btn');
+    const navLogo = document.getElementById('nav-logo');
 
-document.querySelectorAll('.c_l8mfv3').forEach(logo => {
-    logo.addEventListener('click', () => {
-        document.querySelector('.c_jksyv7').style.display = 'block'
-        document.querySelector('.c_dg6ea7').style.display = 'none'
-        document.querySelector('.c_w0v4mx').style.display = 'none'
-    })
-})
+    // Mega menu toggle for mobile
+    if (hamburger && megaLinks) {
+        hamburger.addEventListener('click', () => {
+            megaLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    }
 
-document.querySelectorAll('.c_3149xz').forEach(loginBtn => {
-    loginBtn.addEventListener('click', () => {
-        document.querySelector('.c_jksyv7').style.display = 'none'
-        document.querySelector('.c_dg6ea7').style.display = 'block'
-        document.querySelector('.c_w0v4mx').style.display = 'none'
-    })
-})
-
-document.querySelectorAll('.c_ib4mbj').forEach(signupBtn => {
-    signupBtn.addEventListener('click', () => {
-        document.querySelector('.c_jksyv7').style.display = 'none'
-        document.querySelector('.c_dg6ea7').style.display = 'none'
-        document.querySelector('.c_w0v4mx').style.display = 'flex'
-    })
-})
-
-
-
-const dropdownItems = document.querySelectorAll('.c_yak0jr')
-
-if(window.innerWidth < 1000) {
-    const menuIcon = document.querySelector('.c_1amki4')
-    const nav-top = document.querySelector('.c_38tdjn')
-    
-    menuIcon.addEventListener('click', () => {
-        nav-top.classList.toggle('c_fp8nhq')
-
-        if(!nav-top.classList.contains('c_fp8nhq')) {
-            document.querySelectorAll('.c_pee7w9').forEach(dropdown => {
-                dropdown.style.left = '-20rem'
-            })
+    // Auth panel logic
+    const openAuth = (mode) => {
+        authPanel.classList.add('active');
+        if (mode === 'login') {
+            loginForm.style.display = 'block';
+            signupPanel.style.display = 'none';
+        } else {
+            loginForm.style.display = 'none';
+            signupPanel.style.display = 'block';
         }
-    })
+    };
 
-    document.querySelectorAll('.c_gp952c').forEach(link => {
-        link.addEventListener('click', () => {
-            link.nextElementSibling.style.left = '0'
-        })
-    })
+    if (loginBtn) loginBtn.addEventListener('click', () => openAuth('login'));
+    if (signupBtn) signupBtn.addEventListener('click', () => openAuth('signup'));
+    if (switchToSignup) switchToSignup.addEventListener('click', () => openAuth('signup'));
+    if (backToLogin) backToLogin.addEventListener('click', () => openAuth('login'));
 
-    document.querySelectorAll('.c_debzxu').forEach(headingLink => {
-        headingLink.addEventListener('click', () => {
-            headingLink.parentElement.parentElement.style.left = '-20rem'
-        })
-    })
-} else {
-    dropdownItems.forEach(dropdownItem => {
-        dropdownItem.addEventListener('mouseover', () => {
-            dropdownItem.lastElementChild.style.cssText = 'opacity: 1; visibility: visible'
-            document.querySelector('.c_9iagiz').style.background = 'linear-gradient(to right, #066399, #2f8fdf, #066399)'
-            dropdownItem.firstElementChild.firstElementChild.style.transform = 'rotate(180deg)'
-        })
-        dropdownItem.addEventListener('mouseout', () => {
-            dropdownItem.lastElementChild.style.cssText = 'opacity: 0; visibility: hidden'
-            document.querySelector('.c_9iagiz').style.background = 'none'
-            dropdownItem.firstElementChild.firstElementChild.style.transform = 'rotate(0)'
-        })
-    })
-}
+    if (navLogo) {
+        navLogo.addEventListener('click', (e) => {
+            if (authPanel.classList.contains('active')) {
+                e.preventDefault();
+                authPanel.classList.remove('active');
+            }
+        });
+    }
 
-window.addEventListener('resize', () => {
-    window.location.reload()
-})
-
+    // Dropdown hover effect for desktop
+    const dropdownItems = document.querySelectorAll('.nav-mega-item');
+    dropdownItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            if (window.innerWidth > 1000) {
+                const dropdown = item.querySelector('.mega-dropdown');
+                if (dropdown) {
+                    dropdown.style.opacity = '1';
+                    dropdown.style.visibility = 'visible';
+                    dropdown.style.transform = 'translateY(0)';
+                }
+            }
+        });
+        item.addEventListener('mouseleave', () => {
+            if (window.innerWidth > 1000) {
+                const dropdown = item.querySelector('.mega-dropdown');
+                if (dropdown) {
+                    dropdown.style.opacity = '0';
+                    dropdown.style.visibility = 'hidden';
+                    dropdown.style.transform = 'translateY(10px)';
+                }
+            }
+        });
+    });
+});

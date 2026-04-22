@@ -1,123 +1,56 @@
-let counter1 = 0;
-let counter2 = 1;
-let bool = true;
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll(".wine-section");
+    const counter = document.getElementById("slide-counter");
+    const dots = document.querySelectorAll(".dot");
+    const prevBtn = document.getElementById("arrow-prev");
+    const nextBtn = document.getElementById("arrow-next");
+    const hamburger = document.getElementById("hamburger-wine");
+    const navLinks = document.getElementById("wine-nav-desktop");
 
-const sections = document.querySelectorAll("section");
-const progress = document.querySelector(".c_hrk6i0 h2");
-const circles = document.querySelectorAll(".c_u8o9yy");
-const menu = document.querySelector(".c_j0eh96");
-const section1wrapper = document.querySelector(".c_zdbbk3");
-const section5wrapper = document.querySelector(".c_cfhgnk");
+    let currentSlide = 0;
+    const totalSlides = 5;
 
-section1wrapper.style.transform = "scale(1)";
+    const updateSlide = (index) => {
+        currentSlide = (index + totalSlides) % totalSlides;
+        
+        // In this specific design, slides are often handled by moving them off-screen or changing classes
+        // Based on the old script, it was moving sections left: 0 or -100vw
+        sections.forEach((section, idx) => {
+            if (idx < currentSlide) {
+                section.style.left = "-100vw";
+            } else {
+                section.style.left = "0";
+            }
+        });
 
-const progressCounter = () => {
-  progress.textContent = `${counter2}/${sections.length}`;
+        // Update UI
+        if(counter) counter.textContent = `${currentSlide + 1}/${totalSlides}`;
+        dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === currentSlide);
+        });
+    };
 
-  Array.from(circles).forEach((circle) => {
-    circle.style.backgroundColor = "transparent";
-  });
-  document.querySelector(`.circle-${counter2}`).style.backgroundColor = "#ddd";
-};
-
-const pageController = () => {
-  bool = true;
-  if (counter1 === 5) {
-    Array.from(sections).forEach((section) => {
-      section.style.left = "0";
+    if (prevBtn) prevBtn.addEventListener('click', () => updateSlide(currentSlide - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => updateSlide(currentSlide + 1));
+    
+    dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => updateSlide(idx));
     });
-    counter1 = 0;
-    counter2 = 1;
-    section1wrapper.style.transform = "scale(1)";
-    section5wrapper.style.transform = "scale(1.5)";
-    progressCounter();
-    bool = false;
-  }
 
-  if (counter1 === -1) {
-    Array.from(sections).forEach((section) => {
-      if (section.classList[0] === "c_mxenvm") {
-        return;
-      }
-      section.style.left = "-100vw";
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Scroll wheel support
+    let scrollTimeout;
+    window.addEventListener('wheel', (e) => {
+        if (scrollTimeout) return;
+        scrollTimeout = setTimeout(() => {
+            if (e.deltaY > 0) updateSlide(currentSlide + 1);
+            else updateSlide(currentSlide - 1);
+            scrollTimeout = null;
+        }, 500);
     });
-    counter1 = 4;
-    counter2 = 5;
-    section1wrapper.style.transform = "scale(1.5)";
-    section5wrapper.style.transform = "scale(1)";
-    progressCounter();
-    bool = false;
-  }
-  progressCounter();
-  return bool;
-};
-
-window.addEventListener("wheel", (e) => {
-  const deltaY = e.deltaY > 0;
-
-  if (deltaY) {
-    counter1++;
-    counter2++;
-  } else {
-    counter1--;
-    counter2--;
-  }
-
-  pageController();
-  progressCounter();
-  console.log(counter1, counter2);
-
-  if (bool) {
-    document.querySelector(
-      `.section-${deltaY ? counter1 : counter2}`
-    ).style.left = `${deltaY ? "-100vw" : "0"}`;
-
-    document.querySelector(
-      `.section-${deltaY ? counter1 : counter2}-wrapper`
-    ).style.transform = `scale(${deltaY ? "1.5" : "1"})`;
-
-    document.querySelector(
-      `.section-${deltaY ? counter1 + 1 : counter2 + 1}-wrapper`
-    ).style.transform = `scale(${deltaY ? "1" : "1.5"})`;
-  }
-});
-
-document.querySelector(".c_0mib6u").addEventListener("click", () => {
-  counter1--;
-  counter2--;
-  pageController() &&
-    (document.querySelector(`.section-${counter2}`).style.left = "0");
-
-  if (bool) {
-    document.querySelector(`.section-${counter2}-wrapper`).style.transform =
-      "scale(1)";
-    document.querySelector(`.section-${counter2 + 1}-wrapper`).style.transform =
-      "scale(1.5)";
-  }
-});
-
-document.querySelector(".c_1ws0db").addEventListener("click", () => {
-  counter1++;
-  counter2++;
-  pageController() &&
-    (document.querySelector(`.section-${counter1}`).style.left = "-100vw");
-
-  if (bool) {
-    document.querySelector(`.section-${counter2}-wrapper`).style.transform =
-      "scale(1)";
-    document.querySelector(`.section-${counter1}-wrapper`).style.transform =
-      "scale(1.5)";
-  }
-});
-
-document.querySelector(".c_v7dtlt").addEventListener("mouseover", () => {
-  document.querySelector(".c_woj8k1").style.opacity = ".5";
-});
-
-document.querySelector(".c_v7dtlt").addEventListener("mouseout", () => {
-  document.querySelector(".c_woj8k1").style.opacity = "1";
-});
-
-menu.addEventListener("click", () => {
-  document.querySelector(".c_x04qzm").classList.toggle("c_b0c9kr");
 });

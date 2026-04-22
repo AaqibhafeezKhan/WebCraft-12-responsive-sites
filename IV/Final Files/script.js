@@ -1,24 +1,22 @@
-document.querySelector(".c_tl6j0j").addEventListener("click", () => {
-  document.querySelectorAll(".c_m5uj0j").forEach((item) => {
-    item.classList.toggle("c_hr1grq");
-  });
-});
+document.addEventListener('DOMContentLoaded', () => {
+    const videos = document.querySelectorAll(".prestige-video");
 
-document.querySelectorAll(".c_yehn4u").forEach((item) => {
-  item.addEventListener("click", () => {
-    document.querySelectorAll(".c_m5uj0j").forEach((item) => {
-      item.classList.remove("c_hr1grq");
+    videos.forEach((video) => {
+        video.addEventListener("mouseenter", () => {
+            video.play();
+        });
+        video.addEventListener("mouseleave", () => {
+            video.pause();
+        });
     });
-  });
-});
 
-const videos = document.querySelectorAll(".c_hzj8bx");
-
-videos.forEach((video) => {
-  video.addEventListener("mouseover", () => {
-    video.play();
-  });
-  video.addEventListener("mouseout", () => {
-    video.pause();
-  });
+    // Handle form submission
+    const form = document.getElementById('contact-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Enquiry received. Our concierge will contact you shortly.');
+            form.reset();
+        });
+    }
 });

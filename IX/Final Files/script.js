@@ -1,55 +1,42 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Simple word rotation for the hero title
+    const words = document.querySelectorAll('.rotating-word');
+    let currentWordIndex = 0;
 
-const menu = document.querySelector('.c_mkthy7')
-const nav-top = document.querySelector('.c_3pxgwb')
-
-menu.addEventListener('click', () => {
-    nav-top.classList.toggle('c_advksl')
-    menu.classList.toggle('c_advksl')
-})
-
-
-
-const video = document.querySelector('.c_pege9y')
-const btn = document.querySelector('.c_z62gxv i')
-const bar = document.querySelector('.c_mm96lc')
-
-const playPause = () => {
-    if(video.paused) {
-        video.play()
-        btn.className = 'far fa-pause-circle'
-        video.style.opacity = '.7'
-    } else {
-        video.pause()
-        btn.className = 'far fa-play-circle'
-        video.style.opacity = '.3'
+    if (words.length > 0) {
+        setInterval(() => {
+            words[currentWordIndex].classList.remove('active');
+            currentWordIndex = (currentWordIndex + 1) % words.length;
+            words[currentWordIndex].classList.add('active');
+        }, 3000);
     }
-}
 
-btn.addEventListener('click', () => {
-    playPause()
-})
+    // Video play/pause on overlay click
+    const playBtn = document.getElementById('play-btn');
+    const video = document.getElementById('about-video');
+    const overlay = document.querySelector('.play-overlay');
 
-video.addEventListener('timeupdate', () => {
-    const barWidth = video.currentTime / video.duration
-    bar.style.width = `${barWidth * 100}%`
-    if(video.ended) {
-        btn.className = 'far fa-play-circle'
-        video.style.opacity = '.3'
+    if (playBtn && video) {
+        playBtn.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                overlay.style.opacity = '0';
+                overlay.style.pointerEvents = 'none';
+            } else {
+                video.pause();
+                overlay.style.opacity = '1';
+                overlay.style.pointerEvents = 'all';
+            }
+        });
     }
-})
 
-
-
-var swiper = new Swiper('.c_6kfnxo', {
-    effect: 'coverflow',
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    coverflowEffect: {
-      rotate: 70,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: true,
-    },
-  });
+    // Form submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Message sent! NexAgency will get back to you within 24 hours.');
+            contactForm.reset();
+        });
+    }
+});

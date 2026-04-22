@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Custom Cursor Logic
     const cursor = document.querySelector(".cursor-dot");
     const links = document.querySelectorAll("a, .menu-toggle");
 
@@ -17,10 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // GSAP Animations
     gsap.registerPlugin();
 
-    // Initial load animations
     const tl = gsap.timeline();
 
     tl.fromTo(".reveal-text", 
@@ -38,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "-=1"
     );
 
-    // Image Parallax Effect on Mouse Move
     const heroImage = document.querySelector(".image-wrapper img");
     document.addEventListener("mousemove", (e) => {
         if(!heroImage) return;
@@ -53,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Simple scroll reveal for the grid items
     const observerOptions = {
         threshold: 0.2,
         rootMargin: "0px 0px -100px 0px"
@@ -75,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const gridItems = document.querySelectorAll(".grid-item");
     gridItems.forEach(item => {
-        gsap.set(item, { y: 50, opacity: 0 }); // Initial state
+        gsap.set(item, { y: 50, opacity: 0 });
         observer.observe(item);
     });
 });
